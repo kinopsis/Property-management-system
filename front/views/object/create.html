@@ -1,0 +1,19 @@
+<div>
+    <h1>Каталог фильмов: добавление фильма</h1>
+ 
+    <p>{{ message}}</p>
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.title.$invalid}">
+            <label> Название </label>
+            <div>
+                <input name="title" ng-model="object.title" type= "text" class= "form-control" placeholder="Название фильма">
+                <span ng-show="myForm.title.$dirty && myForm.title.$invalid" class="help-inline">Название обязательно</span>
+            </div>
+        </div>
+        
+        <a href="/object/index" class="btn btn-default">Cancel</a>
+        <button ng-click="createObjects(object);" 
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
